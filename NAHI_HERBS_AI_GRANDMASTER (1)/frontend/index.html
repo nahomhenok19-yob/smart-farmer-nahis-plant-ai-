@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#102d20">
+<meta name="description" content="Nahi Herbs AI — smart plant health insights for growers.">
+<title>Nahi Herbs AI — Grow Smarter</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="ambient ambient-a"></div><div class="ambient ambient-b"></div>
+<header class="topbar">
+  <a class="brand" href="#"><span class="brand-mark">✳</span><span><b>Nahi Herbs</b><small>INTELLIGENCE FOR GROWERS</small></span></a>
+  <nav><a href="#features">Features</a><a href="#scanner">Plant scanner</a><a href="#guide">Field guide</a></nav>
+  <div class="top-actions"><span class="live"><i></i> SYSTEM READY</span><button class="btn btn-small btn-outline" id="themeToggle" aria-label="Toggle theme">◐</button></div>
+</header>
+<main>
+<section class="hero">
+  <div class="hero-copy">
+    <div class="eyebrow"><span>✦</span> YOUR DIGITAL AGRONOMIST</div>
+    <h1>Grow with<br><em>intelligence.</em></h1>
+    <p class="hero-text">A clearer view of plant health. Capture a leaf, explore possible issues, and get practical next steps for a healthier harvest.</p>
+    <div class="hero-ctas"><button class="btn btn-primary" onclick="document.querySelector('#scanner').scrollIntoView({behavior:'smooth'})">Start plant scan <span>↗</span></button><a class="text-link" href="#features">Explore the platform <span>→</span></a></div>
+    <div class="trust-row"><div class="avatar-stack"><span>🌱</span><span>🌾</span><span>🍃</span></div><div><b>Made for the field</b><small>Practical insights. Better decisions.</small></div><div class="hero-divider"></div><div><b>AI-assisted</b><small>Not a substitute for expert advice</small></div></div>
+  </div>
+  <div class="hero-visual">
+    <div class="visual-orbit orbit-one"></div><div class="visual-orbit orbit-two"></div>
+    <div class="hero-image"><img src="assets/farm1.png" alt="Healthy green crops" onerror="this.style.display='none'"><div class="image-fallback">🌿</div></div>
+    <div class="float-card float-top"><span class="float-icon">✳</span><div><small>PLANT INTELLIGENCE</small><b>Every leaf tells a story</b></div></div>
+    <div class="float-card float-bottom"><span class="health-dot"></span><div><small>YOUR NEXT STEP</small><b>Observe · Identify · Improve</b></div></div>
+    <div class="hero-stamp"><span>GROW</span><b>BETTER</b><small>EVERY SEASON</small></div>
+  </div>
+</section>
+<section class="metrics" id="features">
+  <div><span class="metric-icon">⌁</span><div><b>Visual plant check</b><small>Start with a photo of a leaf</small></div></div>
+  <div><span class="metric-icon">✧</span><div><b>Actionable guidance</b><small>Understand what to check next</small></div></div>
+  <div><span class="metric-icon">⌖</span><div><b>Field-ready workflow</b><small>Works on desktop and mobile</small></div></div>
+  <div><span class="metric-icon">◉</span><div><b>Private by design</b><small>Photo stays in your browser in demo mode</small></div></div>
+</section>
+<section class="scanner-section" id="scanner">
+  <div class="section-heading"><div><div class="eyebrow">THE PLANT LAB <span class="tiny-line"></span></div><h2>See what your plant<br><em>is telling you.</em></h2></div><p>Upload a plant photo or use your camera. In demo mode, you’ll get a clearly labelled sample report. Connect the optional AI backend for image-based analysis.</p></div>
+  <div class="scanner-layout">
+    <div class="scan-panel panel">
+      <div class="panel-top"><div><span class="step-number">01</span><b>Capture a specimen</b></div><span class="panel-tag">PHOTO INPUT</span></div>
+      <div class="dropzone" id="dropzone">
+        <video id="camera" autoplay playsinline muted></video><img id="preview" alt="Selected plant preview">
+        <div id="emptyState" class="empty-state"><div class="scan-symbol">⌗</div><b>Your plant, in focus.</b><span>Choose a clear photo of a leaf, stem, or whole plant.</span><label class="btn btn-primary upload-label" for="upload">Choose photo <span>＋</span></label><input type="file" id="upload" accept="image/*"></div>
+        <div class="corner corner-tl"></div><div class="corner corner-tr"></div><div class="corner corner-bl"></div><div class="corner corner-br"></div>
+        <div id="imageBadge" class="image-badge">IMAGE LOADED</div>
+      </div>
+      <div class="scan-controls"><button class="btn btn-outline" id="startCamera">▣ Use camera</button><button class="btn btn-outline" id="capture" disabled>◎ Capture</button><button class="btn btn-quiet" id="clearImage">Reset image</button></div>
+      <div class="privacy-note"><span>♧</span> Good light and a sharp close-up help improve observations.</div>
+    </div>
+    <div class="analysis-panel panel">
+      <div class="panel-top"><div><span class="step-number">02</span><b>Run plant analysis</b></div><span class="panel-tag">AI WORKSPACE</span></div>
+      <div class="analysis-intro"><div class="ai-orb">✳</div><h3>Turn a photo into a plan.</h3><p>Get a structured summary of visible symptoms, possible causes, and sensible next steps.</p></div>
+      <div class="check-list"><div><span>✓</span> Plant identification (when visible)</div><div><span>✓</span> Possible issues and symptom notes</div><div><span>✓</span> Prevention and follow-up checks</div></div>
+      <button class="btn btn-primary analyze-btn" id="analyze" disabled><span class="btn-spark">✦</span> Analyze with Nahi AI <span>→</span></button>
+      <div id="status" class="status" role="status">Add a photo to begin your scan.</div>
+      <div class="demo-note"><span>i</span><span><b>Demo-ready.</b> Without a configured backend, this app uses a sample report and does not pretend it has diagnosed your uploaded image.</span></div>
+    </div>
+  </div>
+</section>
+<section class="report-section" id="reportSection">
+  <div class="section-heading report-heading"><div><div class="eyebrow">YOUR FIELD REPORT <span class="tiny-line"></span></div><h2>From observation<br>to <em>next action.</em></h2></div><span class="report-chip"><i></i> REPORT WORKSPACE</span></div>
+  <div class="report-card panel" id="resultContent"><div class="report-placeholder"><div class="report-icon">✧</div><div><h3>Your plant report will appear here.</h3><p>Upload an image and run an analysis to build a practical field report.</p></div><span class="placeholder-number">REPORT / 001</span></div></div>
+</section>
+<section class="guide-section" id="guide"><div class="guide-copy"><div class="eyebrow">A BETTER START <span class="tiny-line"></span></div><h2>Small observations.<br><em>Stronger harvests.</em></h2><p>For a more useful scan, photograph the affected area in natural light. Include the whole plant when possible, and compare changes over several days.</p><a class="text-link" href="#scanner">Go to plant scanner <span>→</span></a></div><div class="guide-cards"><article class="guide-card"><span class="guide-num">01 / PHOTO</span><div class="guide-illustration leaf-illustration">❧</div><h3>Capture clearly</h3><p>Keep the plant in focus and avoid harsh shadows.</p></article><article class="guide-card"><span class="guide-num">02 / CONTEXT</span><div class="guide-illustration sun-illustration">☼</div><h3>Notice the pattern</h3><p>Check whether symptoms affect one leaf or many.</p></article><article class="guide-card"><span class="guide-num">03 / FOLLOW-UP</span><div class="guide-illustration sprout-illustration">♧</div><h3>Verify before treating</h3><p>Confirm concerns with a local agricultural expert.</p></article></div></section>
+<section class="location-section"><div class="location-card"><div class="location-art">⌖</div><div class="location-copy"><div class="eyebrow">LOCAL SUPPORT</div><h2>Root your next step<br>in <em>local knowledge.</em></h2><p>Find your approximate coordinates to share with an agricultural support service. This does not automatically locate or verify nearby providers.</p><div id="locationResult" class="location-result">Location not requested.</div></div><button class="btn btn-primary" id="locationButton">Use my location <span>↗</span></button></div></section>
+</main>
+<footer><a class="brand footer-brand" href="#"><span class="brand-mark">✳</span><span><b>Nahi Herbs AI</b><small>INTELLIGENCE FOR GROWERS</small></span></a><p>Grow thoughtfully. Verify locally. Harvest confidently.</p><span>© 2026 NAHI HERBS AI <i>·</i> BUILT FOR GROWERS</span><a href="mailto:hello@example.com">Support ↗</a></footer>
+<script src="script.js"></script>
+</body></html>

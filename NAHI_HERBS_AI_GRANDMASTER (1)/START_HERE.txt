@@ -1,0 +1,12 @@
+NAHI HERBS AI — GRAND MASTER EDITION
+
+QUICK PREVIEW:
+1. Extract the ZIP.
+2. Open frontend/index.html in Chrome or Edge.
+3. Upload an image; demo mode provides a clearly labelled sample report.
+
+For camera support, run from the project folder:
+py -m http.server 8080 --directory frontend
+Then visit http://127.0.0.1:8080
+
+For optional real AI, read README.md.
